@@ -17,6 +17,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const payload = validationResult.data;
       const webhookUrl =
+        process.env.N8N_WEBHOOK_URL ||
         "https://n8n.srv812138.hstgr.cloud/webhook/a28cb4b6-719f-4448-917e-3f1f73b2e2ec";
 
       // Demo mode if webhook not configured
